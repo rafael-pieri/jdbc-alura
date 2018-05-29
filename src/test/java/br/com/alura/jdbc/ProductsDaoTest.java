@@ -1,4 +1,4 @@
-package br.com.alura.jdbc.test;
+package br.com.alura.jdbc;
 
 import static org.junit.Assert.assertEquals;
 

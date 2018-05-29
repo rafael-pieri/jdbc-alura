@@ -9,14 +9,12 @@ public class Category {
 	private String name;
 	private final List<Product> products = new ArrayList<>();
 
+	public Category() {}
+
 	public Category(String name) {
 		this.name = name;
 	}
 	
-	public Category() {
-
-	}
-
 	public void add(Product product) {
 		products.add(product);
 	}
@@ -40,5 +38,4 @@ public class Category {
 	public List<Product> getProducts() {
 		return products;
 	}
-
 }

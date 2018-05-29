@@ -27,12 +27,7 @@ public class ProductsDao {
 			statement.setInt(3, product.getCategoryId());
 			statement.execute();
 
-			try (ResultSet resultSet = statement.getGeneratedKeys()) {
-				if (resultSet.next()) {
-					Integer id = resultSet.getInt("id");
-					product.setId(id);
-				}
-			}
+
 		}
 	}
 

@@ -20,15 +20,15 @@ public class CategoriesDao {
 	}
 
 	public void insert(Category category) throws SQLException {
-		String sql = "insert into Category (name) values (?)";
+		String sql = "insert into category (name) values (?)";
 
 		try (PreparedStatement statement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 			statement.setString(1, category.getName());
-			statement.execute();
+			statement.executeUpdate();
 
 			try (ResultSet resultSet = statement.getGeneratedKeys()) {
 				if (resultSet.next()) {
-					Integer id = resultSet.getInt("id");
+					Integer id = resultSet.getInt(1);
 					category.setId(id);
 				}
 			}
@@ -36,7 +36,7 @@ public class CategoriesDao {
 	}
 
 	public void update(Category category) throws SQLException {
-		String sql = "update Category set name = ? where id = ?";
+		String sql = "update category set name = ? where id = ?";
 
 		try (PreparedStatement statement = con.prepareStatement(sql)) {
 			statement.setString(1, category.getName());
@@ -46,7 +46,7 @@ public class CategoriesDao {
 	}
 
 	public void delete(Category category) throws SQLException {
-		String sql = "delete from Category where id = ?";
+		String sql = "delete from category where id = ?";
 
 		try (PreparedStatement statement = con.prepareStatement(sql)) {
 			statement.setInt(1, category.getId());
@@ -57,7 +57,7 @@ public class CategoriesDao {
 	public Category findById(Integer id) throws SQLException {
 		Category category = new Category();
 		
-		String sql = "select name from Category where id = ?";
+		String sql = "select name from category where id = ?";
 
 		try (PreparedStatement statement = con.prepareStatement(sql)) {
 			statement.setInt(1, id);
@@ -78,7 +78,7 @@ public class CategoriesDao {
 	public List<Category> list() throws SQLException {
 		List<Category> categories = new ArrayList<>();
 
-		String sql = "select * from Category";
+		String sql = "select * from category";
 
 		try (PreparedStatement statement = con.prepareStatement(sql)) {
 			statement.execute();
@@ -113,7 +113,7 @@ public class CategoriesDao {
 				   + "       p.name as p_name, "
 				   + "       p.description as p_description, "
 				   + "       p.category_id as p_category_id "
-				   + "  from Category as c join Product as p on p.category_id = c.id " 
+				   + "  from category as c join product as p on p.category_id = c.id "
 				   + " order by c.name";
 
 		try (PreparedStatement statement = con.prepareStatement(sql)) {
@@ -146,5 +146,4 @@ public class CategoriesDao {
 
 		return categories;
 	}
-
 }
