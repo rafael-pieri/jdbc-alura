@@ -5,37 +5,37 @@ import java.util.List;
 
 public class Category {
 
-	private Integer id;
-	private String name;
-	private final List<Product> products = new ArrayList<>();
+    private final List<Product> products = new ArrayList<>();
+    private Integer id;
+    private String name;
 
-	public Category() {}
+    public Category() {}
 
-	public Category(String name) {
-		this.name = name;
-	}
-	
-	public void add(Product product) {
-		products.add(product);
-	}
+    public Category(String name) {
+        this.name = name;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public void add(Product product) {
+        products.add(product);
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public List<Product> getProducts() {
-		return products;
-	}
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
 }

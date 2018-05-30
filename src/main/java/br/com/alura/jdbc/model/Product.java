@@ -41,10 +41,6 @@ public class Product {
         return categoryId;
     }
 
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
-
     @Override
     public String toString() {
         return "Product [id=" + id + ", name=" + name + ", description=" + description + ", categoryId=" + categoryId + "]";

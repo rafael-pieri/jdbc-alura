@@ -6,6 +6,7 @@ CREATE TABLE category (
 
 CREATE TABLE product (
   id INTEGER NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
   category_id integer,
   PRIMARY KEY (id)
