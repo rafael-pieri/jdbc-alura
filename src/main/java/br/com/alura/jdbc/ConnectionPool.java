@@ -20,7 +20,7 @@ public class ConnectionPool {
     ConnectionPool() {
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        basicDataSource.setUrl("jdbc:mysql://localhost:3306/storeDB?createDatabaseIfNotExist=true&useSSL=false");
+        basicDataSource.setUrl("jdbc:mysql://localhost:3306/jdbcDB");
         basicDataSource.setUsername("root");
         basicDataSource.setPassword("root");
         basicDataSource.setInitialSize(1);

@@ -1,0 +1,12 @@
+CREATE TABLE category (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE product (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  description VARCHAR(255) NOT NULL,
+  category_id integer,
+  PRIMARY KEY (id)
+);
