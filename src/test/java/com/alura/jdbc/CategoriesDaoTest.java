@@ -1,11 +1,11 @@
-package com.jdbc.example;
+package com.alura.jdbc;
 
 import static org.junit.Assert.assertEquals;
 
-import com.jdbc.example.dao.CategoriesDao;
-import com.jdbc.example.dao.ProductsDao;
-import com.jdbc.example.model.Category;
-import com.jdbc.example.model.Product;
+import com.alura.jdbc.dao.CategoriesDao;
+import com.alura.jdbc.dao.ProductsDao;
+import com.alura.jdbc.model.Category;
+import com.alura.jdbc.model.Product;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;

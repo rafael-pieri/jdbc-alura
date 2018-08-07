@@ -1,7 +1,7 @@
-package com.jdbc.example.dao;
+package com.alura.jdbc.dao;
 
-import com.jdbc.example.model.Category;
-import com.jdbc.example.model.Product;
+import com.alura.jdbc.model.Category;
+import com.alura.jdbc.model.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

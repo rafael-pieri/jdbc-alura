@@ -1,4 +1,4 @@
-package com.jdbc.example;
+package com.alura.jdbc;
 
 import java.sql.Connection;
 import java.sql.SQLException;
