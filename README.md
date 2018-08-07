@@ -13,9 +13,14 @@ This repository contains some examples of how to work with a database using Java
 * Relationships, optimizing N+1 and ORM tools.
 
 ### How to run all tests successfully
-Execute the following command to up a MYSQL instance:
+Execute the following command to up a MySQL instance:
 
 ```docker run -d -p 3306:3306 --name mysql-jdbc-alura -e MYSQL_ROOT_PASSWORD=root rafaelpieri/jdbc-alura```
 
 Once the database is up and running, execute the following command to run the automatic tests:
 ```mvn test```
+
+#### How to build MySQL docker image locally
+Go to docker/mysql folder and execute the following command:
+
+```docker build -t mysql-jdbc-alura .```
