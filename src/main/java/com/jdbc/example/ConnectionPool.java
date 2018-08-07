@@ -1,16 +1,21 @@
-package br.com.alura.jdbc;
+package com.jdbc.example;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
 
+@SuppressWarnings("WeakerAccess")
 public class ConnectionPool {
 
     private DataSource dataSource;
 
     public ConnectionPool() {
-        BasicDataSource basicDataSource = new BasicDataSource();
+        createConnection();
+    }
+
+    private void createConnection() {
+        final BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         basicDataSource.setUrl("jdbc:mysql://localhost:3306/jdbcDB");
         basicDataSource.setUsername("root");

@@ -1,4 +1,4 @@
-package br.com.alura.jdbc.model;
+package com.jdbc.example.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,8 @@ public class Category {
     private Integer id;
     private String name;
 
-    public Category() {}
+    public Category() {
+    }
 
     public Category(String name) {
         this.name = name;

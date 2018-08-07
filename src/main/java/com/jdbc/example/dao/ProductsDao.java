@@ -1,6 +1,6 @@
-package br.com.alura.jdbc.dao;
+package com.jdbc.example.dao;
 
-import br.com.alura.jdbc.model.Product;
+import com.jdbc.example.model.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +18,7 @@ public class ProductsDao {
     }
 
     public void insert(Product product) throws SQLException {
-        String sql = "insert into product (name, description, category_id) values (?, ?, ?)";
+        String sql = "INSERT INTO product (name, description, category_id) VALUES (?, ?, ?)";
 
         try (PreparedStatement statement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, product.getName());
@@ -36,7 +36,7 @@ public class ProductsDao {
     }
 
     public void update(Product product) throws SQLException {
-        String sql = "update product set name = ? , description = ? where id = ?";
+        String sql = "UPDATE product SET name = ? , description = ? WHERE id = ?";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
             statement.setString(1, product.getName());
@@ -47,7 +47,7 @@ public class ProductsDao {
     }
 
     public void delete(Product product) throws SQLException {
-        String sql = "delete from product where id = ?";
+        String sql = "DELETE FROM product WHERE id = ?";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
             statement.setInt(1, product.getId());
@@ -58,7 +58,7 @@ public class ProductsDao {
     public List<Product> list() throws SQLException {
         List<Product> products = new ArrayList<>();
 
-        String sql = "select * from product";
+        String sql = "SELECT * FROM product";
 
         try (PreparedStatement statement = con.prepareStatement(sql)) {
             statement.execute();

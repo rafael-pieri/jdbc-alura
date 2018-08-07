@@ -1,7 +1,7 @@
-package br.com.alura.jdbc.dao;
+package com.jdbc.example.dao;
 
-import br.com.alura.jdbc.model.Category;
-import br.com.alura.jdbc.model.Product;
+import com.jdbc.example.model.Category;
+import com.jdbc.example.model.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +19,7 @@ public class CategoriesDao {
     }
 
     public void insert(Category category) throws SQLException {
-        String sql = "insert into category (name) values (?)";
+        String sql = "INSERT INTO category (name) VALUES (?)";
 
         try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, category.getName());
@@ -35,7 +35,7 @@ public class CategoriesDao {
     }
 
     public void update(Category category) throws SQLException {
-        String sql = "update category set name = ? where id = ?";
+        String sql = "UPDATE category SET name = ? WHERE id = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, category.getName());
@@ -45,7 +45,7 @@ public class CategoriesDao {
     }
 
     public void delete(Category category) throws SQLException {
-        String sql = "delete from category where id = ?";
+        String sql = "DELETE FROM category WHERE id = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, category.getId());
@@ -56,7 +56,7 @@ public class CategoriesDao {
     public Category findById(Integer id) throws SQLException {
         Category category = new Category();
 
-        String sql = "select name from category where id = ?";
+        String sql = "SELECT name FROM category WHERE id = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, id);
@@ -77,7 +77,7 @@ public class CategoriesDao {
     public List<Category> list() throws SQLException {
         List<Category> categories = new ArrayList<>();
 
-        String sql = "select * from category";
+        String sql = "SELECT * FROM category";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.execute();
@@ -106,14 +106,14 @@ public class CategoriesDao {
 
         Category lastCategory = null;
 
-        String sql = "select c.id as c_id, "
-            + "       c.name as c_name, "
-            + "       p.id as p_id, "
-            + "       p.name as p_name, "
-            + "       p.description as p_description, "
-            + "       p.category_id as p_category_id "
-            + "  from category as c join product as p on p.category_id = c.id "
-            + " order by c.name";
+        String sql = "SELECT c.id AS c_id, "
+            + "       c.name AS c_name, "
+            + "       P.id AS p_id, "
+            + "       P.name AS p_name, "
+            + "       P.description AS p_description, "
+            + "       P.category_id AS p_category_id "
+            + "  FROM category AS c JOIN product AS P ON P.category_id = c.id "
+            + " ORDER BY c.name";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
 

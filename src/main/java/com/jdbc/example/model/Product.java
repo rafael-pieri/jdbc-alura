@@ -1,4 +1,4 @@
-package br.com.alura.jdbc.model;
+package com.jdbc.example.model;
 
 public class Product {
 
@@ -43,6 +43,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product [id=" + id + ", name=" + name + ", description=" + description + ", categoryId=" + categoryId + "]";
+        return "Product [id=" + id + ", name=" + name + ", description=" + description + ", categoryId=" + categoryId
+            + "]";
     }
 }
