@@ -1,4 +1,4 @@
-FROM mysql:8.0.11
+FROM mysql:5.5
 # Add a database
 ENV MYSQL_DATABASE jdbcDB
 # Add the content of the sql-scripts/ directory to your image
