@@ -1,10 +1,10 @@
-## Alura Online Courses - Java and JDBC: Working with a Database
+## Java and JDBC: Working with a Database
 Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, 
 which defines how a client may access a database. It is a Java-based data access technology used for Java database connectivity. 
 It is part of the Java Standard Edition platform, from Oracle Corporation. It provides methods to query and update data in a database, 
 and is oriented towards relational databases.
 
-This repository contains some examples of how to work with a database using Java and JDBC. Below are listed the topics covered during this course:
+This repository contains some examples of how to work with a database using Java and JDBC. Below are listed the topics covered:
 * Inserting and removing data from database;
 * SQL Injection and Prepared Statement;
 * Transaction: commit and rollback;
