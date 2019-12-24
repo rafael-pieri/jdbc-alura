@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/rafael-pieri/jdbc-alura.svg?branch=master)](https://travis-ci.com/rafael-pieri/jdbc-alura)
+
 ## Java and JDBC: Working with a Database
 Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, 
 which defines how a client may access a database. It is a Java-based data access technology used for Java database connectivity. 
